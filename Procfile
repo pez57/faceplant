@@ -1,1 +1,1 @@
-web: faceplant-pp4.wsgi
+web: gunicorn faceplant.wsgi
