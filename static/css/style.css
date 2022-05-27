@@ -1,0 +1,11 @@
+body {
+    height: 100%;
+    font-family: Rokkit, sans-serif;
+    background-color: aquamarine;
+}
+
+.navbar-brand {
+    font-family: koulen, sans-serif;
+    font-size: 50px;
+}
+
