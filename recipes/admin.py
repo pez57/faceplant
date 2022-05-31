@@ -9,9 +9,9 @@ from django_summernote.admin import SummernoteModelAdmin
 class RecipeAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'slug', 'status', 'created_on')
-    search_fields = ['title', 'content']
+    search_fields = ['title', 'description', 'servings', 'ingredients']
     list_filter = ('status', 'created_on')
-    summernote_fields = 'content'
+    summernote_fields = ('description', 'ingredients', 'method')
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
