@@ -4,13 +4,20 @@
 <div class="container-fluid justify-content-center mt-3">
     <div class="card text-center">
         <div class="card-body m-3">
+            {% if user.is_authenticated %}
+            <h2 class="card-title">Welcome Back</h2>
+            <p class="card-text">FACEPLANT is the home of Plant-Based vegan-friendly recipes.
+            </p>
+            <a class="btn btn-primary" href="{% url 'account_logout' %}">Logout</a>
+            {% else %}
             <h2 class="card-title">Welcome Title</h2>
             <p class="card-text">FACEPLANT is the home of Plant-Based vegan-friendly recipes.
-                As a registered user you can post your own recipes and view all you liked posts.
+                Join the community and post your own recipes and view all your liked posts.
                 Register now and join the FACEPLANT Community
             </p>
-            <a href="#" class="btn btn-primary">Register</a>
-            <a href="#" class="btn btn-primary">Login</a>
+            <a href="{% url 'account_signup' %}" class="btn btn-primary">Register</a>
+            <a href="{% url 'account_login' %}" class="btn btn-primary">Login</a>
+            {% endif %}
         </div>
     </div>
 </div>
