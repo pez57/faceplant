@@ -1,21 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container">
 <div class="card mb-3">
-    {% if "placeholder" in recipe.featured_image.url %}
-    <img class="card-img-top" src="https://res.cloudinary.com/df8srtdzw/image/upload/v1653901223/background_mylb0d.jpg">
-    {% else %}
-    <img class="card-img-top" src=" {{ recipe.featured_image.url }}">
-    {% endif %}
+    <img class="card-img-top recipe-detail-image" src="{{ recipe.featured_image.url }}" alt="Card image cap">
     <div class="card-body">
-        <h1 class="card-title">{{ recipe.title }}</h1>
-        <p class="card-text"><small class="text-muted">Recipe Author: {{ recipe.author }}</small></p>
-        <p class="card-text text-muted h6">{{ recipe.created_on}} <i class="far fa-thumbs-up"></i>
+        <h1 class="card-title text-center">{{ recipe.title }}</h1>
+        <p class="card-text text-center"><small class="text-muted">Recipe Author: {{ recipe.author }}</small></p>
+        <p class="card-text text-muted h6 text-center">{{ recipe.created_on}} <i class="far fa-thumbs-up"></i>
             {{ recipe.number_of_likes }}</p>
         <p class="card-text"> {{ recipe.description|safe }} </p>
     </div>
 </div>
-<div class="card-deck">
+<div class="card-group">
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">Ingredients</h5>
@@ -54,5 +51,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 {% endblock content %}
