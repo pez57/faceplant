@@ -32,18 +32,18 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <div class="image-container .embed-responsive-1by1">
+                            <div class=".embed-responsive-1by1">
                                 {% if "placeholder" in recipe.featured_image.url %}
                                 <img class="card-img-top"
                                     src="https://res.cloudinary.com/df8srtdzw/image/upload/v1653901223/background_mylb0d.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ recipe.featured_image.url }}">
                                 {% endif %}
-                                <div class="image-flash">
+                                <div>
                                     <p class="author">Author: {{ recipe.author }}</p>
                                 </div>
                             </div>
-                            <a href="#" class="recipe-link">
+                            <a href="{% url 'recipe_detail' recipe.slug  %}" class="recipe-link">
                                 <h2 class="card-title">{{ recipe.title }}</h2>
                             </a>
                             <hr />

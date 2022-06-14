@@ -7,12 +7,20 @@ body {
 
 .navbar-brand {
     font-family: koulen, sans-serif;
-    color: #FF5F5C;
+    color: #f5f5f5;
     font-size: 2rem;
+}
+
+.leaf {
+    color: #708D81
 }
 
 .nav-item {
     font-family: Roboto, sans-serif;
+}
+
+h1 {
+    padding-top: 2rem;
 }
 
 h2 {
@@ -25,11 +33,23 @@ p {
 
 .btn {
     font-family: Roboto, sans-serif;
+    background-color: #FF5F5C;
+    border: #FF5F5C;
 }
+
+.btn:hover {
+    background-color: #181919;
+    color: #FF5F5C;
+}
+
 
 .recipe-link {
     text-decoration: none;
     color: #181919;
+}
+
+.recipe-link:hover {
+    color: #FF5F5C
 }
 
 .card-img-top {
@@ -41,3 +61,4 @@ p {
 .account-titles {
     font-family: Koulen, sans-serif;
 }
+

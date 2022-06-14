@@ -9,7 +9,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class Recipe(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    slug = AutoSlugField(populate_from='title')
+    slug = AutoSlugField(populate_from='title', always_update=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name="recipe_posts")
     updated_on = models.DateTimeField(auto_now=True)
