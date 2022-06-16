@@ -62,3 +62,9 @@ p {
     font-family: Koulen, sans-serif;
 }
 
+.btn-like {
+    font-size: 2rem;
+    color: #FF5F5C;
+    border: none;
+    background: transparent;
+}

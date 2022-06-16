@@ -85,6 +85,7 @@
             </div>
         </div>
         <div class="card mb-3">
+            {% if user.is_authenticated %}
             <div class="card-body">
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
@@ -102,8 +103,14 @@
                 </form>
                 {% endif %}
                 {% endif %}
-
             </div>
+            {% else %}
+            <div class="card-body text-center">
+                <p>Please sign in or register to leave a comment</p>
+                <a href="{% url 'account_signup' %}" class="btn btn-primary">Register</a>
+                <a href="{% url 'account_login' %}" class="btn btn-primary">Login</a>
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>
