@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Recipe
 from .forms import CommentForm
+from django.views.generic import ListView
 
 
 class RecipeList(generic.ListView):
@@ -79,3 +80,15 @@ class RecipeLike(View):
 
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
+
+class CategoryListView(ListView):
+    template_name = 'category.html'
+    context_object_name = 'catlist'
+
+    def get_queryset(self):
+        content = {
+            'cat': self.kwargs['category'],
+            'recipes': Recipe.objects.filter(category__name=self.kwargs
+            ['category']).filter(status=1)
+        }
+        return content
