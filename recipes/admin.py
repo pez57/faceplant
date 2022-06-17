@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Recipe, Comment
 from django_summernote.admin import SummernoteModelAdmin
+from . import models
 
 
 
@@ -23,3 +24,6 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
+
+
+admin.site.register(models.Category)
