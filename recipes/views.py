@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Recipe
+from .models import Recipe, Category
 from .forms import CommentForm
 from django.views.generic import ListView
 
@@ -92,3 +92,11 @@ class CategoryListView(ListView):
             ['category']).filter(status=1)
         }
         return content
+
+
+def category_list(request):
+    category_list = Category.objects.exclude(name='default')
+    context = {
+        'category_list': category_list,
+    }
+    return context
