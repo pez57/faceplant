@@ -25,8 +25,8 @@ class Recipe(models.Model):
     description = models.TextField()
     servings = models.IntegerField(default=1)
     featured_image = CloudinaryField('image', default='placeholder')
-    ingredients = models.TextField(default=False)
-    method = models.TextField(default=False)
+    ingredients = models.TextField()
+    method = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='recipe_likes', blank=True)
@@ -39,6 +39,7 @@ class Recipe(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+
 
 class Comment(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE,

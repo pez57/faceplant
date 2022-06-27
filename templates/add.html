@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="card mb-3 text-center">
+        <div class="card-body">
+            <h1 class="card-title">Add Your New Recipe</h1>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" class="btn">
+                </form>
+            </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

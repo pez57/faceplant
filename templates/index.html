@@ -6,9 +6,9 @@
         <div class="card-body m-3">
             {% if user.is_authenticated %}
             <h2 class="card-title">Welcome Back</h2>
-            <p class="card-text">FACEPLANT is the home of Plant-Based vegan-friendly recipes.
+            <p class="card-text">Share your own FACEPLANT recipe with the community!
             </p>
-            <a class="btn btn-primary" href="{% url 'account_logout' %}">Logout</a>
+            <a class="btn btn-primary" href="{% url 'add' %}">Add Recipe</a>
             {% else %}
             <h2 class="card-title">Welcome Title</h2>
             <p class="card-text">FACEPLANT is the home of Plant-Based vegan-friendly recipes.

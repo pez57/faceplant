@@ -1,9 +1,22 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.http import HttpResponseRedirect
-from .models import Recipe, Category
-from .forms import CommentForm
 from django.views.generic import ListView
+from django.views.generic.edit import CreateView
+from django.http import HttpResponseRedirect
+from .forms import CommentForm, AddRecipeForm
+from .models import Recipe, Category
+
+
+
+
+class AddRecipeView(CreateView):
+    model = Recipe
+    form_class = AddRecipeForm
+    template_name = 'add.html'
+    success_url = '/recipe_detail/'
+
+
+
 
 
 class RecipeList(generic.ListView):
