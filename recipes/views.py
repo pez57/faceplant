@@ -4,12 +4,17 @@ from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from .forms import CommentForm, AddRecipeForm
 from .models import Recipe, Category
 
 
 
-class EditRecipeView(UpdateView):
+
+class EditRecipeView(PermissionRequiredMixin, UpdateView):
+
+    permission_required = 'recipe.change_recipe'
+
     model = Recipe
     form_class = AddRecipeForm
     template_name = 'add.html'
@@ -22,7 +27,10 @@ class EditRecipeView(UpdateView):
 
 
 
-class AddRecipeView(CreateView):
+class AddRecipeView(PermissionRequiredMixin, CreateView):
+
+    permission_required = 'recipe.add_recipe'
+
     model = Recipe
     form_class = AddRecipeForm
     template_name = 'add.html'
