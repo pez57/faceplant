@@ -1,6 +1,8 @@
 from django_summernote.widgets import SummernoteWidget
 from django import forms
+from django.contrib.auth.models import User
 from .models import Comment, Recipe
+from cloudinary.models import CloudinaryField
 
 
 class CommentForm(forms.ModelForm):
@@ -12,10 +14,11 @@ class CommentForm(forms.ModelForm):
 class AddRecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
-        fields = ('title', 'featured_image', 'category', 'description',
-                  'servings', 'ingredients', 'method')
+        fields = ('author', 'title', 'featured_image', 'category', 'description',
+                  'servings', 'ingredients', 'method', 'status')
 
         widgets = {
+            # 'author': forms.TextInput(attrs={'class': 'form-control'}),
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.TextInput(attrs={'class': 'form-control'}),
             'ingredients':  SummernoteWidget(),

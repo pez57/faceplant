@@ -11,6 +11,12 @@ body {
     font-size: 2rem;
 }
 
+.brand {
+    font-family: koulen, sans-serif;
+    font-size: 2rem;
+    color: #181919;
+}
+
 .leaf {
     color: #708D81
 }
@@ -42,6 +48,10 @@ p {
     color: #FF5F5C;
 }
 
+#submit-recipe {
+    color: #f5f5f5;
+}
+
 
 .recipe-link {
     text-decoration: none;
@@ -58,6 +68,10 @@ p {
     object-fit: cover;
     }
 
+#detail-image {
+    height: 50vh;
+}
+
 .account-titles {
     font-family: Koulen, sans-serif;
 }
@@ -67,4 +81,8 @@ p {
     color: #FF5F5C;
     border: none;
     background: transparent;
+}
+
+form {
+    margin-bottom: 3em;
 }

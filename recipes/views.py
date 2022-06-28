@@ -9,13 +9,18 @@ from .models import Recipe, Category
 
 
 
+
+
 class AddRecipeView(CreateView):
     model = Recipe
     form_class = AddRecipeForm
     template_name = 'add.html'
-    success_url = '/recipe_detail/'
+    # success_url = 'recipe_detail'
 
-
+    def get_initial(self, *args, **kwargs):
+        initial = super().get_initial(**kwargs)
+        initial['author'] = self.request.user
+        return initial
 
 
 

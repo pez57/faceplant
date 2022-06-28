@@ -7,11 +7,11 @@
             <h1 class="card-title">Add Your New Recipe</h1>
         </div>
         <div class="row justify-content-md-center">
-            <div class="col">
+            <div class="col mb-3">
                 <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <input type="submit" class="btn">
+                    <input type="submit" class="btn" id="submit-recipe">
                 </form>
             </div>
     </div>
