@@ -86,3 +86,8 @@ p {
 form {
     margin-bottom: 3em;
 }
+
+.footer-brand {
+    font-family: koulen, sans-serif;
+    text-decoration: none;
+}

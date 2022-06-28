@@ -15,7 +15,7 @@ class AddRecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
         fields = ('author', 'title', 'featured_image', 'category', 'description',
-                  'servings', 'ingredients', 'method', 'status')
+                  'servings', 'ingredients', 'method')
 
         widgets = {
             # 'author': forms.TextInput(attrs={'class': 'form-control'}),

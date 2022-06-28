@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView
 from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
 from .forms import CommentForm, AddRecipeForm
 from .models import Recipe, Category
 
@@ -15,7 +16,9 @@ class AddRecipeView(CreateView):
     model = Recipe
     form_class = AddRecipeForm
     template_name = 'add.html'
-    # success_url = 'recipe_detail'
+
+    def get_success_url(self):
+        return reverse_lazy('recipe_detail', kwargs={'slug': self.object.slug})
 
     def get_initial(self, *args, **kwargs):
         initial = super().get_initial(**kwargs)
