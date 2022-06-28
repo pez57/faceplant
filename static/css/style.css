@@ -83,6 +83,19 @@ p {
     background: transparent;
 }
 
+.btn-edit {
+    font-family: Roboto, sans-serif;
+    font-size: 1rem;
+    color: #181919;
+    border: none;
+    background: transparent;
+}
+
+button.btn-edit {
+    margin: 0px;
+    padding: 0px;
+}
+
 form {
     margin-bottom: 3em;
 }
@@ -90,4 +103,8 @@ form {
 .footer-brand {
     font-family: koulen, sans-serif;
     text-decoration: none;
+}
+
+.page-link {
+    color: #181919
 }

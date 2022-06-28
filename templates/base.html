@@ -32,14 +32,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Recipes</a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -50,6 +42,22 @@
                                 {{ category.name|title }}
                             </a>
                             {% endfor %}
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Recipes</a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            {% for category in category_list %}
+                            <a class="dropdown-item" href="/category/{{ category.name}}">
+                                {{ category.name|title }}
+                            </a>
+                            {% endfor %}
+                    {% endif %}
                         </div>
                     </li>
                 </ul>

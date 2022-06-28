@@ -18,7 +18,6 @@ class AddRecipeForm(forms.ModelForm):
                   'servings', 'ingredients', 'method')
 
         widgets = {
-            # 'author': forms.TextInput(attrs={'class': 'form-control'}),
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.TextInput(attrs={'class': 'form-control'}),
             'ingredients':  SummernoteWidget(),

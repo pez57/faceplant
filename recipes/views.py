@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from .forms import CommentForm, AddRecipeForm
@@ -9,6 +9,16 @@ from .models import Recipe, Category
 
 
 
+class EditRecipeView(UpdateView):
+    model = Recipe
+    form_class = AddRecipeForm
+    template_name = 'add.html'
+
+    def get_success_url(self):
+        return reverse_lazy('recipe_detail', kwargs={'slug': self.object.slug})
+
+
+        
 
 
 
