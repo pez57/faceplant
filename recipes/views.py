@@ -23,8 +23,6 @@ class EditRecipeView(PermissionRequiredMixin, UpdateView):
         return reverse_lazy('recipe_detail', kwargs={'slug': self.object.slug})
 
 
-        
-
 
 
 class AddRecipeView(PermissionRequiredMixin, CreateView):
