@@ -25,6 +25,14 @@ class EditRecipeView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     def get_success_url(self):
         return reverse_lazy('recipe_detail', kwargs={'slug': self.object.slug})
 
+    def get_queryset(self, *args, **kwargs):
+        return super().get_queryset(*args, **kwargs).filter(
+            author=self.request.user
+        )
+
+
+    
+
 
 
 
@@ -38,6 +46,8 @@ class AddRecipeView(LoginRequiredMixin, CreateView):
 
     login_url = '/accounts/login/'
     redirect_field_name = 'account_login'
+
+
 
     def get_success_url(self):
         return reverse_lazy('recipe_detail', kwargs={'slug': self.object.slug})
