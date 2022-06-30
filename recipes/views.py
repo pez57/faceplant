@@ -4,16 +4,19 @@ from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
-from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
 from .forms import CommentForm, AddRecipeForm
 from .models import Recipe, Category
 
 
 
 
-class EditRecipeView(PermissionRequiredMixin, UpdateView):
+class EditRecipeView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
 
     permission_required = 'recipe.change_recipe'
+
+    login_url = '/accounts/login/'
+    redirect_field_name = 'account_login'
 
     model = Recipe
     form_class = AddRecipeForm
@@ -25,13 +28,16 @@ class EditRecipeView(PermissionRequiredMixin, UpdateView):
 
 
 
-class AddRecipeView(PermissionRequiredMixin, CreateView):
+class AddRecipeView(LoginRequiredMixin, CreateView):
 
-    permission_required = 'recipe.add_recipe'
+    # permission_required = 'recipe.add_recipe'
 
     model = Recipe
     form_class = AddRecipeForm
     template_name = 'add.html'
+
+    login_url = '/accounts/login/'
+    redirect_field_name = 'account_login'
 
     def get_success_url(self):
         return reverse_lazy('recipe_detail', kwargs={'slug': self.object.slug})
