@@ -1,19 +1,27 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
 from .forms import CommentForm, AddRecipeForm
 from .models import Recipe, Category
 
+class DeleteRecipeView(DeleteView):
+
+    # login_url = '/accounts/login/'
+    # redirect_field_name = 'account_login'
+
+    model = Recipe
+    template_name = 'confirm_delete.html'
+
+    success_url = reverse_lazy('home') # change this to view all whenset up
 
 
 
-class EditRecipeView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
 
-    permission_required = 'recipe.change_recipe'
+class EditRecipeView(LoginRequiredMixin,  UpdateView):
 
     login_url = '/accounts/login/'
     redirect_field_name = 'account_login'
@@ -29,11 +37,6 @@ class EditRecipeView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
         return super().get_queryset(*args, **kwargs).filter(
             author=self.request.user
         )
-
-
-    
-
-
 
 
 class AddRecipeView(LoginRequiredMixin, CreateView):

@@ -15,12 +15,14 @@
             <p class="card-text"><small class="text-muted">Recipe Author: {{ recipe.author }}</small></p>
             <p class="card-text text-muted h6">{{ recipe.created_on}}
             {% if request.user == recipe.author %}
-            <form action="{% url 'recipe_edit' recipe.slug %}" method="POST">
+            <a href="{% url 'recipe_edit' recipe.slug %}">Edit</a>
+            <a href="{% url 'recipe_delete' recipe.slug %}">Delete</a>
+            <!-- <form action="{% url 'recipe_edit' recipe.slug %}" method="POST">
                 {% csrf_token %}
                 <button type="submit" name="recipe_id" value="{{ recipe.slug }}" class="btn edit-btn">
                     Edit <i class="fa-solid fa-pencil"></i>
                 </button>
-            </form>
+            </form> -->
             {% endif %}
 
 
