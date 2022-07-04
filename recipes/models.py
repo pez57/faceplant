@@ -14,7 +14,6 @@ class Category(models.Model):
         return self.name
 
 
-
 class Recipe(models.Model):
     title = models.CharField(max_length=200, unique=True)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)

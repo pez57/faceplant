@@ -37,8 +37,9 @@
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{% url 'add' %}">Add Recipe</a>
                                 <hr>
+                                <a class="dropdown-item" href="{% url 'view_all' %}">All Recipes</a>
                             {% for category in category_list %}
-                            <a class="dropdown-item" href="/category/{{ category.name}}">
+                            <a class="dropdown-item" href="/category/{{ category.name }}">
                                 {{ category.name|title }}
                             </a>
                             {% endfor %}

@@ -137,9 +137,21 @@ class RecipeLike(View):
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
+class AllRecipes(generic.ListView):
+    model = Recipe
+    queryset = Recipe.objects.filter(status=1).order_by("-created_on")
+    template_name = "view_all.html"
+    paginate_by = 6
+
+
 class CategoryListView(ListView):
     template_name = 'category.html'
     context_object_name = 'catlist'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category'] = self.kwargs['category']
+        return context
 
     def get_queryset(self):
         content = {
@@ -148,6 +160,7 @@ class CategoryListView(ListView):
             ['category']).filter(status=1)
         }
         return content
+
 
 
 def category_list(request):
