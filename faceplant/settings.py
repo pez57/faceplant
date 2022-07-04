@@ -94,7 +94,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'faceplant.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 

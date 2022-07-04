@@ -148,7 +148,7 @@ class CategoryListView(ListView):
     template_name = 'category.html'
     context_object_name = 'catlist'
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs): #Adds category name to kwargs
         context = super().get_context_data(**kwargs)
         context['category'] = self.kwargs['category']
         return context

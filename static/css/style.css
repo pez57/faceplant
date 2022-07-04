@@ -108,3 +108,10 @@ form {
 .page-link {
     color: #181919
 }
+
+/* Responsive Summernote Input Field for smaller screens */
+@media (max-width: 994px) {
+    iframe {
+        width: 80%
+    }
+}

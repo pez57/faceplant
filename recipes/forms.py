@@ -5,6 +5,8 @@ from .models import Comment, Recipe
 from cloudinary.models import CloudinaryField
 
 
+
+
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
@@ -16,10 +18,9 @@ class AddRecipeForm(forms.ModelForm):
         model = Recipe
         fields = ('author', 'title', 'featured_image', 'category', 'description',
                   'servings', 'ingredients', 'method')
-
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'description': forms.TextInput(attrs={'class': 'form-control'}),
+            'description': forms.Textarea(attrs={'class': 'form-control'}),
             'ingredients':  SummernoteWidget(),
             'method':  SummernoteWidget(),
         }
