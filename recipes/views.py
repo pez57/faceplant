@@ -10,22 +10,22 @@ from django.contrib.messages.views import SuccessMessageMixin
 from .forms import CommentForm, AddRecipeForm
 from .models import Recipe, Category
 
-class DeleteRecipeView(SuccessMessageMixin, DeleteView):
 
-    # login_url = '/accounts/login/'
-    # redirect_field_name = 'account_login'
+class DeleteRecipeView(SuccessMessageMixin, DeleteView):
 
     model = Recipe
     template_name = 'confirm_delete.html'
     success_message = "Recipe has been deleted"
-
     success_url = reverse_lazy('view_all')
 
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message)
         return super(DeleteRecipeView, self).delete(request, *args, **kwargs)
 
-
+    def get_queryset(self, *args, **kwargs):
+        return super().get_queryset(*args, **kwargs).filter(
+            author=self.request.user
+        )
 
 
 class EditRecipeView(SuccessMessageMixin, LoginRequiredMixin,  UpdateView):
@@ -59,8 +59,6 @@ class AddRecipeView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     login_url = '/accounts/login/'
     redirect_field_name = 'account_login'
     success_message = "Recipe was added successfully"
-
-
 
     def get_success_url(self):
         return reverse_lazy('recipe_detail', kwargs={'slug': self.object.slug})
@@ -106,9 +104,7 @@ class RecipeDetail(View):
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.filter(approved=True).order_by('created_on')
-        liked = False
-        if recipe.likes.filter(id=self.request.user.id).exists():
-            liked = True
+        liked = recipe.likes.filter(id=self.request.user.id).exists()
 
         comment_form = CommentForm(data=request.POST)
 
