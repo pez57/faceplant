@@ -5,7 +5,7 @@
 <div class="container">
     {% if messages %}
     {% for message in messages %}
-    <div class="text-center alert alert-{{ message.tags }}" id="success-message">
+    <div class="text-center alert alert-{{ message.tags }} success-message">
         {{ message|safe }}
     </div>
     {% endfor %}

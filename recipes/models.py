@@ -16,7 +16,7 @@ class Category(models.Model):
 
 class Recipe(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, null=False)
     slug = AutoSlugField(populate_from='title', always_update=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name="recipe_posts")
