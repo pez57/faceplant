@@ -23,4 +23,5 @@ class AddRecipeForm(forms.ModelForm):
             'description': forms.Textarea(attrs={'class': 'form-control'}),
             'ingredients':  SummernoteWidget(),
             'method':  SummernoteWidget(),
+            'author': forms.HiddenInput(),
         }
