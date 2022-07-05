@@ -2,11 +2,18 @@
 
 {% block content %}
 <div class="container-fluid justify-content-center mt-3">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="text-center alert alert-{{ message.tags }}" id="success-message">
+        {{ message|safe }}
+    </div>
+    {% endfor %}
+    {% endif %}
     <div class="card text-center">
         <div class="card-body m-3">
             <h2 class="card-title">All Recipes <i class="fa-solid fa-leaf leaf"></i></h2>
             <p class="card-text">
-                Here you'll find all the latest recipes posted by FACEPLANT community. 
+                Here you'll find all the latest recipes posted by FACEPLANT community.
             </p>
         </div>
     </div>

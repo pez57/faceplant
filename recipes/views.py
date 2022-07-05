@@ -4,24 +4,31 @@ from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
-from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
+from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from .forms import CommentForm, AddRecipeForm
 from .models import Recipe, Category
 
-class DeleteRecipeView(DeleteView):
+class DeleteRecipeView(SuccessMessageMixin, DeleteView):
 
     # login_url = '/accounts/login/'
     # redirect_field_name = 'account_login'
 
     model = Recipe
     template_name = 'confirm_delete.html'
+    success_message = "Recipe has been deleted"
 
-    success_url = reverse_lazy('home') # change this to view all whenset up
+    success_url = reverse_lazy('view_all')
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeleteRecipeView, self).delete(request, *args, **kwargs)
 
 
 
 
-class EditRecipeView(LoginRequiredMixin,  UpdateView):
+class EditRecipeView(SuccessMessageMixin, LoginRequiredMixin,  UpdateView):
 
     login_url = '/accounts/login/'
     redirect_field_name = 'account_login'
@@ -29,6 +36,7 @@ class EditRecipeView(LoginRequiredMixin,  UpdateView):
     model = Recipe
     form_class = AddRecipeForm
     template_name = 'add.html'
+    success_message = "Recipe was updated successfully"
 
     def get_success_url(self):
         return reverse_lazy('recipe_detail', kwargs={'slug': self.object.slug})
@@ -37,9 +45,10 @@ class EditRecipeView(LoginRequiredMixin,  UpdateView):
         return super().get_queryset(*args, **kwargs).filter(
             author=self.request.user
         )
+ 
 
 
-class AddRecipeView(LoginRequiredMixin, CreateView):
+class AddRecipeView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
 
     # permission_required = 'recipe.add_recipe'
 
@@ -49,6 +58,7 @@ class AddRecipeView(LoginRequiredMixin, CreateView):
 
     login_url = '/accounts/login/'
     redirect_field_name = 'account_login'
+    success_message = "Recipe was added successfully"
 
 
 

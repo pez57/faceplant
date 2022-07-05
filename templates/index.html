@@ -6,6 +6,7 @@
         <div class="card-body m-3">
             {% if user.is_authenticated %}
             <h2 class="card-title">Welcome Back <i class="fa-solid fa-leaf leaf"></i></h2>
+            <small class="card-text mb-1 text-muted">Signed is as: {{ user.get_username }}</small>
             <p class="card-text">Share your own FACEPLANT recipe with the community!
             </p>
             <a class="btn btn-primary" href="{% url 'add' %}">Add Recipe</a>
@@ -34,10 +35,10 @@
                         <div class="card-body">
                             <div class=".embed-responsive-1by1">
                                 {% if "placeholder" in recipe.featured_image.url %}
-                                <img class="card-img-top"
+                                <img aria-label="placeholder_image" class="card-img-top"
                                     src="https://res.cloudinary.com/df8srtdzw/image/upload/v1653901223/background_mylb0d.jpg">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ recipe.featured_image.url }}">
+                                <img aria-label="recipe_image" class="card-img-top" src=" {{ recipe.featured_image.url }}">
                                 {% endif %}
                                 <div>
                                     <p class="author">Author: {{ recipe.author }}</p>

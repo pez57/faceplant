@@ -16,8 +16,8 @@ class CommentForm(forms.ModelForm):
 class AddRecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
-        fields = ('author', 'title', 'featured_image', 'category', 'description',
-                  'servings', 'ingredients', 'method')
+        fields = ('author', 'title', 'featured_image', 'category',
+                  'description', 'servings', 'ingredients', 'method')
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),
