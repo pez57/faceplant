@@ -7,3 +7,7 @@ urlpatterns = [
     path('', include('recipes.urls',), name='recipes_urls'),
     path('accounts/', include('allauth.urls')),
 ]
+
+
+handler404 = 'recipes.views.not_found'
+handler500 = 'recipes.views.error_page'

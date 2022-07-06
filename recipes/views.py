@@ -173,3 +173,12 @@ def category_list(request):
         'category_list': category_list,
     }
     return context
+
+
+# Custom error pages
+def not_found(request, exception):
+    return render(request, '404.html')
+
+
+def error_page(request, exception=None):
+    return render(request, '500.html')
