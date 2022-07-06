@@ -50,8 +50,6 @@ class EditRecipeView(SuccessMessageMixin, LoginRequiredMixin,  UpdateView):
 
 class AddRecipeView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
 
-    # permission_required = 'recipe.add_recipe'
-
     model = Recipe
     form_class = AddRecipeForm
     template_name = 'add.html'
@@ -153,8 +151,8 @@ class AllRecipes(generic.ListView):
 class CategoryListView(ListView):
     template_name = 'category.html'
     context_object_name = 'catlist'
-
-    def get_context_data(self, **kwargs): #Adds category name to kwargs
+    #Adds category name to kwargs
+    def get_context_data(self, **kwargs): 
         context = super().get_context_data(**kwargs)
         context['category'] = self.kwargs['category']
         return context
