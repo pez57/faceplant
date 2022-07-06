@@ -29,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['faceplant-pp4.herokuapp.com', 'localhost']
 
@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'django_summernote',
     'crispy_forms',
     'recipes',
-    'django_extensions',
 ]
 
 SITE_ID = 1
