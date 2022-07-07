@@ -4,8 +4,6 @@ from django_summernote.admin import SummernoteModelAdmin
 from . import models
 
 
-
-
 @admin.register(Recipe)
 class RecipeAdmin(SummernoteModelAdmin):
 
