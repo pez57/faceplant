@@ -15,7 +15,7 @@
         <img class="card-img-top" id="detail-image"
             src="https://res.cloudinary.com/df8srtdzw/image/upload/v1653901223/background_mylb0d.jpg">
         {% else %}
-        <img class="card-img-top" id="detail-image" src=" {{ recipe.featured_image.url }}">
+        <img class="card-img-top" id="detail-image" src=" {{ recipe.featured_image.url }}" alt="recipe_image" aria-label="recipe_image">
         {% endif %}
         <div class="card-body">
             <h1 class="card-title">{{ recipe.title }}</h1>

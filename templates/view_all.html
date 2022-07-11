@@ -31,9 +31,9 @@
                             <div class=".embed-responsive-1by1">
                                 {% if "placeholder" in recipe.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://res.cloudinary.com/df8srtdzw/image/upload/v1653901223/background_mylb0d.jpg">
+                                    src="https://res.cloudinary.com/df8srtdzw/image/upload/v1653901223/background_mylb0d.jpg" alt="placeholder_image" aria-label="placeholder_image">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ recipe.featured_image.url }}">
+                                <img class="card-img-top" src=" {{ recipe.featured_image.url }}" alt="recipe_image" aria-label="recipe_image">
                                 {% endif %}
                                 <div>
                                     <p class="author">Author: {{ recipe.author }}</p>

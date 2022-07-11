@@ -1,5 +1,22 @@
-# FACEPLANT
-* build in progress 
+# FACEPLANT - Plant Based Recipe Community
+![Image of responsive home page](media/readme/responsive.png)
+ [View site here](https://faceplant-pp4.herokuapp.com/)
+
+---
+
+## About
+Are you looking for new vegan recipes shared by a plant based community? Then you have come to the right place! 
+
+FACEPLANT is a fully responsive website dedicated to sharing tried and tested recipes with it's community. Users can view recipes, submit their own, and leave comments expressing their adoration or adaptions to the recipes.
+
+---
+
+## Contents
+
+---
+
+## Target Audience
+The Faceplant website is targeted towards users with an interest in plant based, vegan food that want to join a community of like minded food lovers. 
 
 ## Features
 ### Home Page
