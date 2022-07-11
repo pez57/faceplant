@@ -35,10 +35,10 @@
                         <div class="card-body">
                             <div class=".embed-responsive-1by1">
                                 {% if "placeholder" in recipe.featured_image.url %}
-                                <img aria-label="placeholder_image" class="card-img-top"
+                                <img alt="placeholder" aria-label="placeholder_image" class="card-img-top"
                                     src="https://res.cloudinary.com/df8srtdzw/image/upload/v1653901223/background_mylb0d.jpg">
                                 {% else %}
-                                <img aria-label="recipe_image" class="card-img-top" src=" {{ recipe.featured_image.url }}">
+                                <img  alt="recipe_image" aria-label="recipe_image" class="card-img-top" src=" {{ recipe.featured_image.url }}">
                                 {% endif %}
                                 <div>
                                     <p class="author">Author: {{ recipe.author }}</p>
