@@ -1,6 +1,52 @@
 # FACEPLANT
 * build in progress 
 
+## Features
+### Home Page
+Users to the site are immediately greeted with the site logo in nav bar and a welcome message at top of the loaded page. The nav bar contains the neccessary links to access the main features of the site and is stuck to the top of the page so that the user can navigate to these links when scrolling down.
+![Image of mobile navbar and submenu](media/readme/mobnav.png)
+
+The Welcome Message for an unauthenticated user displays the website logo, brief about message and a call to action with a Register and Login button.
+![Image of guest welcome message](media/readme/guestwcmmssg.png)
+
+Logged in users are greeted with a Welcome Back message, logged in as: "user" info, and an "Add Recipe" button replacing the registration buttons.
+![Image of logged in user welcome message](media/readme/userwcmmssg.png)
+
+Below the Welcome Message is the recipe feed which displays all uploaded recipes in most recent order. Each recipe preview shows a featured image, Author username, recipe title, the date and time of upload, and a like counter.
+![Image of recipe preview](media/readme/recipepreview.png)
+
+At the bottom of the page is the footer. This contains social media icon links, a copyright mark, and a small Faceplant logo that takes the user back to home page.
+![Image of page footer](media/readme/footer.png)
+
+### Full Recipe Detail Pages
+When a user clicks on the title of a recipe preview they will be taken to the full recipe detail page. The top of the page contains the featured immage, title, author username, upload time & date, like button and counter, and the recipe desription.
+![Image of recipe detail top of page](media/readme/detailtop.png)
+
+The ingredients section contains a list of required ingredients and the servings quantity. The method section is an ordered list of steps to create the recipe. On large displays these sections are side by side, on medium to small displays they are in columns.
+![Image of igredients and method sections](media/readme/ingmethsect.png)
+
+Logged in users are able to submit comments at the bottom of the recipe page. Once the comment is submitted there is a success message notifying the user that their comment has been sent for approval. All comments need approval from the admin before they are published. Approved comments are on display to all users.
+![Image of comments section](media/readme/comments.png)
+
+### Add Recipe Page
+Authenticated users are able to add their own recipes to the website. To do this, simply click the Add Recipe button on homepage or in the Recipes submenu in navbar.
+This will take the user to the recipe form. The form requires all but the image fields to be completed in order to submit. A placeholder image is used when a user doesn't upload an image or if there is an error during upload.
+![Image of recipe form top](media/readme/recipeform1.png)
+![Image of recipe form bottom](media/readme/recipeform2.png)
+
+### Category Pages
+The recipes are assigned one of four categories chosen by the author: Breakfast, Lunch, Dinner and Sweets. The user has the ability to view only the recipes in a selected category by accessing the sub menu in the recipes section of the nav bar. Each category page displays only the recipes assigned to that category in most recent order.
+![Image of lunch category page](media/readme/categorypages.png)
+
+### 404 & 500 Pages
+If a user encounters a server error or unknown page they are directed to a custom error page. This page gives the user an "Oops! You are lost" message and a link to go back home.
+![Image of error page](media/readme/errorpages.png)
+
+### User Registration, Login & Logout
+Users are taken to the selected form which will only be submitted when fields are correctly entered. If the wrong info is entered there will be an error message displayed.
+![Image of login page](media/readme/loginform.png)
+
+
 
 ---
 ## Manual Testing
