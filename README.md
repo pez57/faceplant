@@ -1,6 +1,8 @@
 # FACEPLANT
 * build in progress 
 
+
+---
 ## Manual Testing
 ### Navbar and Footer
 | Test | Action | Expected Result | Pass |
@@ -89,7 +91,9 @@
 | ---- | ------ | --------------- | ---- |
 | Admin Panel  | Access Admin panel when signed in as a superuser | Admin has access to all admin tools | ✓ |
 
-## User Stories
+---
+
+## User Story Testing
 ### Admin:
 * As a site Admin, I can login as a superuser so that I can access admin tools.
     * Admin superusers have access to the admin panel via  /admin. There they have full access to admin tools.
