@@ -41,6 +41,10 @@ class Recipe(models.Model):
 
 
 class Comment(models.Model):
+    """
+    Comment model code adapted from Code Institue 
+    Walkthrough Project
+    """
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE,
                                related_name="comments")
     name = models.CharField(max_length=80)
