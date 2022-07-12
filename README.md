@@ -252,12 +252,27 @@ All custom written HTML code in my templates file has been tested using: https:/
 CSS was also validated using: https://validator.w3.org/ 
 * Results: No Errors or Warnings founds
 ### Python
-All Python code conforms to the pep8 style guide and shows no linting errors in workspace.
+All Python code conforms to the pep8 style guide and only linting errors are due to Django.
 
 ## Lighthouse
 I generated Lighthouse reports in chrome dev tools for the Home, Recipe Detail, and Category pages. All of which had no red warning scores. The performance score is not where I would like it but this is an issue regarding my image sizes and will work on this in the future.
 Average mobile score:
 ![image of lighthouse score](media/readme/lighthouse.png)
+
+## Bugs
+Chrome Developer tools was used extensively in the project to check and manipulate problems with design, layout and HTML rendering.
+### Resolved Bugs
+* Add Recipe form submit 404 Page not found.
+    * Solution was to use get_success_url method to create the new url after successful form submit.
+* Add Recipe form upload image was not saving.
+    * Solution was to add (`enctype="multipart/form-data"`) attribute to the form.
+* Unauthenticated users could access Add and Edit urls
+    * Solution was to use the (`LoginRequiredMixin`) mixin in my Add, Edit and Delete views.
+
+### Existing bug
+There is one issue regarding the footer on some pages. The footer can have blank space below it if the content does not fill the display. I will fix this in the future as it does not intefere with the overall funtionality of the application.
+
+
 
 
 
