@@ -265,9 +265,9 @@ Chrome Developer tools was used extensively in the project to check and manipula
 * Add Recipe form submit 404 Page not found.
     * Solution was to use get_success_url method to create the new url after successful form submit.
 * Add Recipe form upload image was not saving.
-    * Solution was to add (`enctype="multipart/form-data"`) attribute to the form.
+    * Solution was to add `enctype="multipart/form-data"` attribute to the form.
 * Unauthenticated users could access Add and Edit urls
-    * Solution was to use the (`LoginRequiredMixin`) mixin in my Add, Edit and Delete views.
+    * Solution was to use the `LoginRequiredMixin` mixin in my Add, Edit and Delete views.
 
 ### Existing bug
 There is one issue regarding the footer on some pages. The footer can have blank space below it if the content does not fill the display. I will fix this in the future as it does not intefere with the overall funtionality of the application.
