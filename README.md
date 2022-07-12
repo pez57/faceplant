@@ -5,9 +5,9 @@
 ---
 
 ## About
-Are you looking for new vegan recipes shared by a plant based community? Then you have come to the right place! 
+Are you looking for new vegan recipes so good you'll want to plant your face right in? Then you have come to the right place! 
 
-FACEPLANT is a fully responsive website dedicated to sharing tried and tested recipes with it's community. Users can view recipes, submit their own, and leave comments expressing their adoration or adaptions to the recipes.
+FACEPLANT is a fully responsive website dedicated to sharing tried and tested recipes with it's community. Users can view recipes, submit their own, and leave comments expressing their adoration or adaptions.
 
 ---
 
@@ -63,7 +63,34 @@ If a user encounters a server error or unknown page they are directed to a custo
 Users are taken to the selected form which will only be submitted when fields are correctly entered. If the wrong info is entered there will be an error message displayed.
 ![Image of login page](media/readme/loginform.png)
 
+---
 
+## Design
+### Theme
+The theme of Faceplant revolves around plant based recipes. My design aim was to let the recipe previews and full recipe details be the focal point, with simple modern contrast between navigation and background colors.
+
+### Color Palette
+![Image of color palette](media/readme/palette.png)
+
+### Logo
+I wanted the branding logo to be a subtle nod to the plant based theme of the project. To achieve this I used a fontawesome leaf icon colored green from my color palette. I chose the Koulen font for the logo because it looks modern and is uppercase by default which gives an immediate impact.
+
+![Image of logo](media/readme/logo.png)
+
+### Fonts
+The two complimentary fonts I used were both imported from google.fonts
+* Logo - Koulen: Uppercase and impactful
+* Text Content - Roboto: Modern and familiar
+
+### Wireframes
+I used Balsamiq to draft the layout for the Home page and Recipe Detail page. This helped me scope the amount of content needed to achieve a clean layout with required content. My final design relates closely to these wireframes.
+* Home Page - Includes Nav Bar, Welcome banner and registration buttons, and recipe preview images.
+
+![Home page wireframe](media/readme/homewireframe.png)
+
+* Recipe Detail Page - Includes main image, Ingredients & Method cards, and a comment section.
+
+![Recipe Detail Wireframe](media/readme/recipedetailwireframe.png)
 
 ---
 
@@ -269,7 +296,7 @@ Chrome Developer tools was used extensively in the project to check and manipula
 * Unauthenticated users could access Add and Edit urls
     * Solution was to use the `LoginRequiredMixin` mixin in my Add, Edit and Delete views.
 
-### Existing bug
+### Existing Bug
 There is one issue regarding the footer on some pages. The footer can have blank space below it if the content does not fill the display. I will fix this in the future as it does not intefere with the overall funtionality of the application.
 
 
