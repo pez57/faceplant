@@ -66,6 +66,7 @@ Users are taken to the selected form which will only be submitted when fields ar
 
 
 ---
+
 ## Manual Testing
 ### Navbar and Footer
 | Test | Action | Expected Result | Pass |
@@ -154,6 +155,11 @@ Users are taken to the selected form which will only be submitted when fields ar
 | ---- | ------ | --------------- | ---- |
 | Admin Panel  | Access Admin panel when signed in as a superuser | Admin has access to all admin tools | ✓ |
 
+### Success Messages
+| Test | Action | Expected Result | Pass |
+| ---- | ------ | --------------- | ---- |
+| Success Message JavaScript Function  | Login and add, edit and delete a test recipe | Success message will hide after 5 seconds of succesful recipe update | ✓ |
+
 ---
 
 ## User Story Testing
@@ -234,5 +240,26 @@ Users are taken to the selected form which will only be submitted when fields ar
         * iPhone 12pro
         * Google Pixel 6
         * Google Pixel 2
+
+## Validation
+### HTML
+All custom written HTML code in my templates file has been tested using: https://validator.w3.org/ 
+* Results
+    * All custom HTML has no errors and one warning
+    * Errors that do occur are caused by generated code within Django templating tags and Summernote
+![Image of validation results](media/readme/htmlvalidationwarning.png)
+### CSS
+CSS was also validated using: https://validator.w3.org/ 
+* Results: No Errors or Warnings founds
+### Python
+All Python code conforms to the pep8 style guide and shows no linting errors in workspace.
+
+## Lighthouse
+I generated Lighthouse reports in chrome dev tools for the Home, Recipe Detail, and Category pages. All of which had no red warning scores. The performance score is not where I would like it but this is an issue regarding my image sizes and will work on this in the future.
+Average mobile score:
+![image of lighthouse score](media/readme/lighthouse.png)
+
+
+
 
 
