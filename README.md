@@ -21,55 +21,68 @@ The Faceplant website is targeted towards users with an interest in plant based,
 ## Features
 ### Home Page
 Users to the site are immediately greeted with the site logo in nav bar and a welcome message at top of the loaded page. The nav bar contains the neccessary links to access the main features of the site and is stuck to the top of the page so that the user can navigate to these links when scrolling down.
+
 ![Image of mobile navbar and submenu](media/readme/mobnav.png)
 
 The Welcome Message for an unauthenticated user displays the website logo, brief about message and a call to action with a Register and Login button.
+
 ![Image of guest welcome message](media/readme/guestwcmmssg.png)
 
 Logged in users are greeted with a Welcome Back message, logged in as: "user" info, and an "Add Recipe" button replacing the registration buttons.
+
 ![Image of logged in user welcome message](media/readme/userwcmmssg.png)
 
 Below the Welcome Message is the recipe feed which displays all uploaded recipes in most recent order. Each recipe preview shows a featured image, Author username, recipe title, the date and time of upload, and a like counter.
+
 ![Image of recipe preview](media/readme/recipepreview.png)
 
 At the bottom of the page is the footer. This contains social media icon links, a copyright mark, and a small Faceplant logo that takes the user back to home page.
+
 ![Image of page footer](media/readme/footer.png)
 
 ### Full Recipe Detail Pages
 When a user clicks on the title of a recipe preview they will be taken to the full recipe detail page. The top of the page contains the featured immage, title, author username, upload time & date, like button and counter, and the recipe desription.
+
 ![Image of recipe detail top of page](media/readme/detailtop.png)
 
 The ingredients section contains a list of required ingredients and the servings quantity. The method section is an ordered list of steps to create the recipe. On large displays these sections are side by side, on medium to small displays they are in columns.
+
 ![Image of igredients and method sections](media/readme/ingmethsect.png)
 
 Logged in users are able to submit comments at the bottom of the recipe page. Once the comment is submitted there is a success message notifying the user that their comment has been sent for approval. All comments need approval from the admin before they are published. Approved comments are on display to all users.
+
 ![Image of comments section](media/readme/comments.png)
 
 ### Add Recipe Page
 Authenticated users are able to add their own recipes to the website. To do this, simply click the Add Recipe button on homepage or in the Recipes submenu in navbar.
 This will take the user to the recipe form. The form requires all but the image fields to be completed in order to submit. A placeholder image is used when a user doesn't upload an image or if there is an error during upload.
+
 ![Image of recipe form top](media/readme/recipeform1.png)
 ![Image of recipe form bottom](media/readme/recipeform2.png)
 
 ### Category Pages
 The recipes are assigned one of four categories chosen by the author: Breakfast, Lunch, Dinner and Sweets. The user has the ability to view only the recipes in a selected category by accessing the sub menu in the recipes section of the nav bar. Each category page displays only the recipes assigned to that category in most recent order.
+
 ![Image of lunch category page](media/readme/categorypages.png)
 
 ### 404 & 500 Pages
 If a user encounters a server error or unknown page they are directed to a custom error page. This page gives the user an "Oops! You are lost" message and a link to go back home.
+
 ![Image of error page](media/readme/errorpages.png)
 
 ### User Registration, Login & Logout
 Users are taken to the selected form which will only be submitted when fields are correctly entered. If the wrong info is entered there will be an error message displayed.
+
 ![Image of login page](media/readme/loginform.png)
 
 ---
 
 ## Design
 ### Theme
-The theme of Faceplant revolves around plant based recipes. My design aim was to let the recipe previews and full recipe details be the focal point, with simple modern contrast between navigation and background colors.
+The theme of Faceplant was inspired by modern duotone design and branding for vegan food companies. My design aim was to let the recipe previews and full recipe details be the focal point, with simple modern contrast between navigation and background colors.
 
 ### Color Palette
+
 ![Image of color palette](media/readme/palette.png)
 
 ### Logo
@@ -91,6 +104,12 @@ I used Balsamiq to draft the layout for the Home page and Recipe Detail page. Th
 * Recipe Detail Page - Includes main image, Ingredients & Method cards, and a comment section.
 
 ![Recipe Detail Wireframe](media/readme/recipedetailwireframe.png)
+
+---
+
+Data Model
+
+![Data model graph image](media/readme/datamodel.png)
 
 ---
 
@@ -274,6 +293,7 @@ All custom written HTML code in my templates file has been tested using: https:/
 * Results
     * All custom HTML has no errors and one warning
     * Errors that do occur are caused by generated code within Django templating tags and Summernote
+
 ![Image of validation results](media/readme/htmlvalidationwarning.png)
 ### CSS
 CSS was also validated using: https://validator.w3.org/ 
@@ -283,7 +303,9 @@ All Python code conforms to the pep8 style guide and only linting errors are due
 
 ## Lighthouse
 I generated Lighthouse reports in chrome dev tools for the Home, Recipe Detail, and Category pages. All of which had no red warning scores. The performance score is not where I would like it but this is an issue regarding my image sizes and will work on this in the future.
+
 Average mobile score:
+
 ![image of lighthouse score](media/readme/lighthouse.png)
 
 ## Bugs
@@ -295,9 +317,24 @@ Chrome Developer tools was used extensively in the project to check and manipula
     * Solution was to add `enctype="multipart/form-data"` attribute to the form.
 * Unauthenticated users could access Add and Edit urls
     * Solution was to use the `LoginRequiredMixin` mixin in my Add, Edit and Delete views.
+* Summernote text fields not responsive
+    * Solution was to add custom CSS media query to resize the Iframe for smaller screens. 
 
 ### Existing Bug
 There is one issue regarding the footer on some pages. The footer can have blank space below it if the content does not fill the display. I will fix this in the future as it does not intefere with the overall funtionality of the application.
+
+## Future Improvements
+There is further functionality and improvements I would like to implement:
+* User profile
+    * Users will be able to have their own profile page with dashboard
+    * Links to their own published recipes
+    * A favourites section
+    * Notifications for likes and comments on their recipes
+* Favourites
+    * User ability to click a favourite button on recipes
+* Styled Admin Page
+    * Admin page to reflect the styling of the main site
+* Improve Lighthouse Performance Score
 
 
 
