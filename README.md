@@ -107,6 +107,38 @@ I used Balsamiq to draft the layout for the Home page and Recipe Detail page. Th
 
 ---
 
+## User Experience
+### User Stories
+* Admin Only
+    1. As a site Admin I can login as superuser so that I can access admin tools. (Must-Have)
+    2. As an Admin I can Approve Comments so that I can monitor the context of interaction and keep the site a safe space. (Should-Have)
+    3. As a site Admin I can create, read, update and delete posts so that I can manage the site content. (Must-Have)
+* Users
+    1. As a User I can use the site on any size screen so that the design and UX is consistent on any device. (Must-Have)
+    2. As a User I can navigate to previous pages and access home simply so that I can access familiar pages use the site with ease. (Must-Have)
+    3. As a User I can register and login so that I can like, comment and add recipes. (Must-Have)
+    4. As a site User I can view recipe previews so that I can choose which recipe to read. (Must-Have)
+    5. As a site User I can click on a recipe so I can open the full post and view full content. (Must-Have)
+    6. As an authenticated User I can create a recipe post so that I can create and share my own content. (Must-Have)
+    7. As an authenticated User I can edit/update and delete my previous recipes so that I can keep my recipes relevent. (Must-Have)
+    8. As an authenticated User I can be notified on screen when I create edit & delete a recipe so that I know there were no errors. (Should-Have)
+    9. As an authenticated User I can click one button on home page to add a new recipe so that I can instantly interact with the site. (Could-Have)
+    10. As an authenticated User I can like & unlike recipes so that I can interact with other user's recipes. (Should-Have)
+    11. As an authenticated Site User I can comment on a recipe so that I can interact with the faceplant community. (Should-Have)
+    12. As a User I can view all recipes so that I do not have to return to the home page every time I want to view all. (Should-Have)
+    13. As an authenticated User I can add a category to my recipe so that the it can be filtered into the related category. (Should-Have)
+---
+
+## Agile
+I managed my tasks for this project using the Github kanban Agile project management tool. I created my User Stories labelling them "Must-Have" for strictly neccesary tasks, "Should-Have" for desired tasks, or "Could-have" for tasks that are not neccessary for required functionality.
+All User Stories started in the "To Do" board, moved to "In Progress", and once completed the User Story was moved to the "Done" board and then marked as issue closed.
+
+![Image of kanban board](media/readme/kanban.png)
+
+The only incomplete User Stories are labelled as Could-Have and will be worked on in the future.
+
+---
+
 Data Model
 
 ![Data model graph image](media/readme/datamodel.png)
@@ -390,6 +422,7 @@ To deploy to Heroku follow these steps:
 * [Summernote](https://github.com/summernote/django-summernote) Was used as an improved WYSIWYG editor for some of my form text inputs.
 * [Autoslug](https://django-autoslug.readthedocs.io/en/latest/) Was used to generate slugs from the recipe title.
 * [Cloudinary](https://cloudinary.com/documentation/django_integration) Used to upload form images and store remotely.
+* [Graphviz](https://graphviz.org/) Was used to produce my data model graph.
 * [Postgres](https://www.heroku.com/postgres) Database
 * [Heroku](https://django-autoslug.readthedocs.io/en/latest/) Was used to diploy the project.
 * https://favicon.io/ Was used to generate the favicon
