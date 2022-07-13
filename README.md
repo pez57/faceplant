@@ -12,11 +12,27 @@ FACEPLANT is a fully responsive website dedicated to sharing tried and tested re
 ---
 
 ## Contents
-
+  * [About](#about)
+  * [Target Audience](#target-audience)
+  * [Features](#features)
+  * [Design](#design)
+  * [User Experience](#user-experience)
+    + [User Stories](#user-stories)
+  * [Agile](#agile)
+  * [Manual Testing](#manual-testing)
+  * [User Story Testing](#user-story-testing)
+  * [Validation](#validation)
+  * [Bugs](#bugs)
+  * [Future Improvements](#future-improvements)
+  * [Deployment](#deployment)
+  * [Technologies](#technologies)
+  * [Credits](#credits)
 ---
 
 ## Target Audience
 The Faceplant website is targeted toward users with an interest in plant-based, vegan food that want to join a community of like-minded food lovers. 
+
+---
 
 ## Features
 ### Home Page
@@ -318,6 +334,8 @@ Data Model
         * iPhone 12pro
         * Google Pixel 6
         * Google Pixel 2
+
+---
 
 ## Validation
 ### HTML
