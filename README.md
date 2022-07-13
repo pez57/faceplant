@@ -323,6 +323,7 @@ Chrome Developer tools was used extensively in the project to check and manipula
 ### Existing Bug
 There is one issue regarding the footer on some pages. The footer can have blank space below it if the content does not fill the display. I will fix this in the future as it does not intefere with the overall funtionality of the application.
 
+---
 ## Future Improvements
 There is further functionality and improvements I would like to implement:
 * User profile
@@ -335,6 +336,71 @@ There is further functionality and improvements I would like to implement:
 * Styled Admin Page
     * Admin page to reflect the styling of the main site
 * Improve Lighthouse Performance Score
+
+---
+## Deployment
+### Cloning the repository
+To clone the repository, follow these steps:
+
+1. Log into Github and open this repo: https://github.com/pez57/faceplant
+2. Above the list of files, click on Code, a dropdown menu is presented with different options.
+3. In the Clone with HTTPs section, copy the clone URL for the repository.
+4. In your local IDE open the terminal.
+5. Change the current working directory to the location where you want the cloned directory to be.
+6. Type git clone, and then paste the URL copied earlier (step 3).
+7. Press Enter to create your local clone.
+
+### Environment Variables
+Create an env.py file. The following variables are required for this project:
+
+* SECRET_KEY: "create your own or generate random".
+* CLOUDINARY_URL: Copy your CLOUDINARY_URL e.g. API Environment Variable from Cloudinary Dashboard (create free cloudinary account [here](https://cloudinary.com/)).
+* DATABASE_URL: This is the value of DATABASE_URL in Heroku (step 5 of the next section), located in the Settings Tab, in Config Vars.
+* In settings.py change the ALLOWED_HOSTS values to use your localhost and Heroku app name.
+
+### Deploying to Heroku
+To deploy to Heroku follow these steps:
+
+1. Log into Heroku and locate the "New" button, on the top right end side of your dashboard page.
+2. Click on "Create new app", select your region and pick a name for your project.
+3. On top of the next page there is a navigation bar, select "Settings".
+4. In "Settings" add buildpack Python.
+5. Add Database to App Resources. This is located in the Resources Tab, Add-ons, search and add e.g. "Heroku Postgres".
+6. In the Settings Tab, in Config Vars, make sure you have the DATABASE_URL added with the previous step and to add the other variables: SECRET_KEY and CLOUDINARY_URL. Make sure you have the same variables here and in your env.py.
+7. On the navigation bar on top of the page, select now "Deploy".
+8. Select deployment method "Github" and seach for your repository.
+9. Proceed to link the Heroku app to the repository by clicking on "Connect".
+10. Click on Deploy.
+
+## Technologies
+### Languages
+* [Python](https://www.python.org/)
+* [JavaScript](https://www.javascript.com/)
+* [HTML](https://en.wikipedia.org/wiki/HTML5)
+* [CSS](https://www.w3schools.com/css/)
+
+### Workspace
+* [Gitpod](https://www.gitpod.io/) Was used as my IDE workspace.
+
+### Development Tools & Apps
+* [Django](https://www.djangoproject.com/) Framework was used to build this project.
+* [Bootstrap](https://getbootstrap.com/) Framework was used to create responsive front end.
+* [allauth](https://django-allauth.readthedocs.io/) Was used to handle authentication.
+* [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) Was used to control the rendering behaviour of my Django forms.
+* [Summernote](https://github.com/summernote/django-summernote) Was used as an improved WYSIWYG editor for some of my form text inputs.
+* [Autoslug](https://django-autoslug.readthedocs.io/en/latest/) Was used to generate slugs from the recipe title.
+* [Cloudinary](https://cloudinary.com/documentation/django_integration) Used to upload form images and store remotely.
+* [Postgres](https://www.heroku.com/postgres) Database
+* [Heroku](https://django-autoslug.readthedocs.io/en/latest/) Was used to diploy the project.
+* https://favicon.io/ Was used to generate the favicon
+* [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) were used extensively to check and test responsiveness and html rendering.
+* [Google Fonts](https://fonts.google) Supplied my fonts used.
+* [Fontawesome](https://fontawesome.com/) Supplied the icons i used in the branding logo and like button.
+
+### Version Control
+* [git](https://git-scm.com/) was used to add, commit and push changes to my code.
+* [Github](https://github.com/) is where my pushed code is stored.
+
 
 
 
