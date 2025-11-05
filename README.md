@@ -1,6 +1,6 @@
 # FACEPLANT - Plant Based Recipe Community
 ![Image of responsive home page](media/readme/responsive.png)
- [View site here](https://faceplant-pp4.herokuapp.com/)
+
 
 ---
 
